@@ -1,0 +1,54 @@
+# Build output
+build/
+*.app/
+.release/
+*.o
+*.dSYM/
+
+# Test artifacts
+tests/shots/
+*.log
+
+# Local state. Never commit a paired device's token hashes or a personal deck.
+session.json
+deck.json
+
+# TLS material. build/ already covers these, but they are listed by name too:
+# a private key reaching a public repo is not recoverable by deleting it later.
+build/tls/
+*.keychain-db
+keychain-password
+*.srl
+
+# Credentials and keys. None of these belong in a repo; listed so an accidental
+# copy into the working tree is not staged by `git add .`.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.certSigningRequest
+*.mobileprovision
+secrets.*
+
+# Local notes and scratch work
+DESIGN-REVIEW.md
+NOTES.md
+scratch/
+tmp/
+
+# Editor and tooling
+.vscode/
+.idea/
+*.swp
+*~
+node_modules/
+
+# macOS
+.DS_Store
+**/.DS_Store
+._*
+.Spotlight-V100
+.Trashes
